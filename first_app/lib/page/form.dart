@@ -1,5 +1,7 @@
 import 'package:first_app/main.dart';
 import 'package:flutter/material.dart';
+import 'package:first_app/page/ to_do_page.dart';
+import 'package:first_app/model/to_do.dart';
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({super.key});
@@ -45,6 +47,16 @@ class _MyFormPageState extends State<MyFormPage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyFormPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('To Do'),
+              onTap: () {
+                // Route the menu to the to do page
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ToDoPage()),
                 );
               },
             ),
@@ -226,7 +238,9 @@ class _MyFormPageState extends State<MyFormPage> {
                                 padding: const EdgeInsets.only(top: 20, bottom: 20),
                                 shrinkWrap: true,
                                 children: <Widget>[
-                                  Center(child: Text('Hello $_fullName')),
+                                  Center(child: Text('Hello $_fullName'!)),
+                                  Center(child: Text('From PBP $pdbClass class')),
+                                  Center(child: Text('Hope your grade will get better ✌🏻')),
                                   const SizedBox(height: 20),
                                   // TODO: Display the information obtained from the form
                                   TextButton(
